@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SOSAI KEY | One Voice Can Save a Life</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#07130e;color:#f4f7ef;font-family:Arial,sans-serif}a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:9;padding:16px 6%;display:flex;justify-content:space-between;background:#07130eee;border-bottom:1px solid #244735;backdrop-filter:blur(12px)}
+.logo{font-weight:900;letter-spacing:2px}.navlinks{display:flex;gap:22px;font-size:14px;color:#bdd0c2}
+.hero{min-height:760px;padding:70px 7%;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px}
+.eyebrow{color:#c7e89b;text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:bold}
+h1{font-size:clamp(48px,7vw,90px);line-height:.9;letter-spacing:-4px;margin:18px 0}h1 span{color:#b9d986}
+p{color:#a9bbb0;line-height:1.7}.btn{border:1px solid #416d4e;background:#153522;color:white;padding:13px 18px;border-radius:13px;font-weight:bold;cursor:pointer}.primary{background:#c7e89b;color:#102015;border-color:#c7e89b}
+.cta{display:flex;gap:12px;margin-top:25px;flex-wrap:wrap}.device-stage{height:590px;display:grid;place-items:center;perspective:1000px}
+.device{width:250px;height:370px;position:relative;transform-style:preserve-3d;animation:float 4s ease-in-out infinite;cursor:grab}
+.shell,.front{position:absolute;inset:0;border-radius:48% 52% 49% 51%/30% 31% 69% 70%}
+.shell{background:linear-gradient(135deg,#6d9c50,#315e35 55%,#163c25);box-shadow:inset 12px 8px 20px #fff2,inset -14px -16px 25px #0005,0 30px 60px #0008}
+.front{inset:10px;background:linear-gradient(145deg,#c4e59b,#8bb75f 55%,#638f48);transform:translateZ(10px)}
+.clip{position:absolute;top:-72px;left:79px;width:92px;height:105px;border:12px solid #aaa;border-bottom-width:10px;border-radius:45px 45px 25px 25px;transform:translateZ(12px)}
+.led{position:absolute;top:70px;left:50%;width:24px;height:24px;transform:translateX(-50%);border-radius:50%;background:#fff;box-shadow:0 0 8px #fff,0 0 24px #49caff;z-index:2}
+.sos{position:absolute;top:125px;left:50%;transform:translateX(-50%);width:124px;height:124px;border-radius:50%;border:5px solid #59321f;background:radial-gradient(circle at 35% 25%,#915b36,#522e1e 70%);color:white;font-size:28px;font-weight:900;cursor:pointer;z-index:3;box-shadow:inset 0 4px 10px #fff2,0 7px 14px #0004}.sos small{display:block;font-size:18px}
+.speaker{position:absolute;bottom:45px;left:50%;transform:translateX(-50%);width:60px;height:42px;background:radial-gradient(circle,#182719 0 4px,transparent 5px);background-size:18px 18px}.side{position:absolute;right:-2px;top:190px;width:20px;height:60px;border-radius:10px;background:#23472d}
+@keyframes float{50%{transform:translateY(-14px) rotateY(-5deg)}}
+section{padding:80px 7%}.title{max-width:760px;margin-bottom:30px}.title h2{font-size:48px;margin:10px 0}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.card,.panel{background:#0d2118;border:1px solid #244735;border-radius:22px;padding:22px}.card{min-height:170px}.card h3{margin:14px 0 7px}.card p{font-size:14px}
+.demo{display:grid;grid-template-columns:1fr 1.2fr;gap:18px}.status{font-size:13px;color:#a9c5b2}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#53df83;box-shadow:0 0 12px #53df83;margin-right:8px}
+.sensor{display:grid;grid-template-columns:1fr auto;gap:10px;margin:18px 0;font-size:13px;color:#9db1a4}.bar{height:8px;background:#1a3225;border-radius:10px;margin-top:7px;overflow:hidden}.bar i{display:block;height:100%;width:30%;background:#c7e89b;transition:.5s}.value{font-weight:bold;color:#e8f3e2}
+.flow{display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap;margin:25px 0}.node{padding:12px;border:1px solid #345c43;border-radius:13px;background:#10281c;text-align:center;font-size:12px;min-width:95px}.node.active{border-color:#c7e89b;box-shadow:0 0 22px #a9d87833}
+.log{height:190px;overflow:auto;background:#06100b;border:1px solid #173326;border-radius:14px;padding:13px;font:12px monospace;color:#9cc8a7}.log div{margin-bottom:8px}
+.alert{display:none;margin-top:15px;border:1px solid #81343b;background:#32171b;padding:15px;border-radius:15px}.alert.show{display:block}
+.dashboard{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.map{height:270px;border:1px solid #254935;border-radius:18px;background:linear-gradient(135deg,#10261b,#08140e);position:relative;overflow:hidden}.map:before{content:"";position:absolute;inset:0;background:linear-gradient(30deg,transparent 48%,#23422f 49%,transparent 51%),linear-gradient(120deg,transparent 48%,#23422f 49%,transparent 51%);background-size:90px 70px}.pin{position:absolute;left:58%;top:42%;width:20px;height:20px;border-radius:50%;background:#ff5964;box-shadow:0 0 0 10px #ff596422,0 0 28px #ff5964}.label{position:absolute;bottom:12px;left:12px;background:#07130eee;padding:8px;border-radius:8px;font-size:11px}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:12px}.metric{background:#0a1b13;border:1px solid #1d3b2a;padding:17px;border-radius:15px}.metric span{font-size:12px;color:#80968a}.metric strong{display:block;font-size:25px;margin-top:6px}
+footer{padding:35px 7%;border-top:1px solid #193426;color:#73887c;font-size:12px;display:flex;justify-content:space-between}
+@media(max-width:850px){.hero,.demo,.dashboard{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.navlinks{display:none}}@media(max-width:520px){.cards{grid-template-columns:1fr}.title h2{font-size:36px}}
+</style>
+</head>
+<body>
+<nav><div class="logo">🥑 SOSAI KEY</div><div class="navlinks"><a href="#features">Features</a><a href="#demo">Live Demo</a><a href="#system">System</a><a href="#privacy">Privacy</a></div></nav>
+
+<header class="hero">
+<div><div class="eyebrow">AI-powered personal safety prototype</div><h1>One voice.<br><span>One key.</span><br>One chance.</h1>
+<p>SOSAI KEY is a small, portable safety keychain concept that combines sound, buzz/vibration, temperature and GPS signals with AI verification before preparing an emergency alert.</p>
+<div class="cta"><a class="btn primary" href="#demo">▶ Try Prototype</a><a class="btn" href="#system">Explore System ↓</a></div><p style="font-size:12px">Prototype demonstration only. Sensor readings and alerts on this website are simulated.</p></div>
+<div class="device-stage" id="stage"><div class="device" id="device"><div class="shell"></div><div class="front"></div><div class="clip"></div><div class="led" id="led"></div><button class="sos" id="sos">SOS<small>♩</small></button><div class="speaker"></div><div class="side"></div></div></div>
+</header>
+
+<section id="features"><div class="title"><div class="eyebrow">Designed around the user</div><h2>Small enough to carry. Smart enough to respond.</h2><p>Designed with accessibility, portability, fast response and privacy in mind.</p></div>
+<div class="cards"><div class="card">🎙️<h3>Sound Detection</h3><p>Detects an unusual sound pattern and passes the event to the verification layer.</p></div><div class="card">🧠<h3>AI Verification</h3><p>Cross-checks multiple signals before an emergency event is classified.</p></div><div class="card">📍<h3>GPS Location</h3><p>Prepares simulated location information so help can know where the event occurred.</p></div><div class="card">🔐<h3>Privacy First</h3><p>Emergency information is represented as an encrypted data package in this concept.</p></div></div></section>
+
+<section id="demo"><div class="title"><div class="eyebrow">Interactive prototype</div><h2>See SOSAI KEY think.</h2><p>Press the physical-looking SOS button or run an automatic emergency simulation.</p></div>
+<div class="demo"><div class="panel"><div class="status"><span class="dot"></span><span id="status">Device online • Ready</span></div><h3>Simulated sensors</h3>
+<div class="sensor"><div>Sound intensity<div class="bar"><i id="sb"></i></div></div><div class="value" id="sv">18 dB</div></div>
+<div class="sensor"><div>Buzz / vibration<div class="bar"><i id="bb"></i></div></div><div class="value" id="bv">0.12 g</div></div>
+<div class="sensor"><div>Temperature<div class="bar"><i id="tb"></i></div></div><div class="value" id="tv">27.4 °C</div></div>
+<div class="sensor"><div>GPS accuracy<div class="bar"><i id="gb"></i></div></div><div class="value" id="gv">±8 m</div></div>
+<button class="btn primary" id="simulate">Simulate Emergency Detection</button><div class="alert" id="alert">🚨 <b>SIMULATED EMERGENCY ALERT</b><br>Verification completed. Encrypted event data + GPS location prepared. No real authorities are contacted.</div>
+</div>
+<div class="panel"><h3>AI verification pipeline</h3><div class="flow"><div class="node" data-n="1">🎙️<br>DETECT</div>→<div class="node" data-n="2">📡<br>COLLECT</div>→<div class="node" data-n="3">🧠<br>VERIFY</div>→<div class="node" data-n="4">📍<br>LOCATE</div>→<div class="node" data-n="5">🚨<br>ALERT</div></div><div class="log" id="log"><div>[SYSTEM] SOSAI KEY initialized.</div><div>[SYSTEM] Waiting for an event…</div></div></div></div></section>
+
+<section id="system"><div class="title"><div class="eyebrow">Emergency command dashboard</div><h2>From signal to response.</h2></div><div class="dashboard"><div class="panel"><h3>Location & Event Map</h3><div class="map"><div class="pin"></div><div class="label">📍 Simulated location • Kuala Lumpur, Malaysia<br>GPS accuracy: ±8 m</div></div></div><div class="panel"><h3>Live Status</h3><div class="metrics"><div class="metric"><span>Verification</span><strong id="vm">READY</strong></div><div class="metric"><span>Alert</span><strong id="am">STANDBY</strong></div><div class="metric"><span>GPS</span><strong>ACTIVE</strong></div><div class="metric"><span>Privacy</span><strong>ENCRYPTED</strong></div></div></div></div></section>
+
+<section id="privacy"><div class="title"><div class="eyebrow">Privacy architecture</div><h2>Protection is part of the design.</h2></div><div class="dashboard"><div class="panel">🔒<h3>Encrypted emergency data</h3><p>In a real deployment, encryption, authentication, retention and access controls would be implemented securely on the backend.</p></div><div class="panel">🛡️<h3>Multi-signal verification</h3><p>The concept checks more than one signal to help reduce false alarms before an emergency notification is prepared.</p></div></div></section>
+
+<footer><span>© 2026 SOSAI KEY • Prototype Showcase</span><span>TOGETHER WITH SOSAI KEY, ONE VOICE CAN SAVE A LIFE.</span></footer>
+
+<script>
+const $=x=>document.querySelector(x),nodes=[...document.querySelectorAll('.node')];
+function sensors(e=false){let s=e?72+Math.random()*24:10+Math.random()*28,b=e?.65+Math.random()*.3:.05+Math.random()*.16,t=e?30+Math.random()*4:26+Math.random()*3,g=5+Math.random()*7;
+$('#sv').textContent=Math.round(s)+' dB';$('#bv').textContent=b.toFixed(2)+' g';$('#tv').textContent=t.toFixed(1)+' °C';$('#gv').textContent='±'+Math.round(g)+' m';
+$('#sb').style.width=s+'%';$('#bb').style.width=Math.min(100,b*100)+'%';$('#tb').style.width=(t/40*100)+'%';$('#gb').style.width=Math.max(20,100-g*5)+'%'}sensors();
+function log(t){let d=document.createElement('div');d.textContent=new Date().toLocaleTimeString()+'  '+t;$('#log').appendChild(d);$('#log').scrollTop=$('#log').scrollHeight}
+async function run(){ $('#sos').classList.remove('pulse');void $('#sos').offsetWidth;$('#sos').classList.add('pulse');$('#alert').classList.remove('show');$('#vm').textContent='PROCESSING';$('#am').textContent='VERIFYING';$('#status').textContent='Emergency sequence running';sensors(true);nodes.forEach(n=>n.classList.remove('active'));
+let steps=['Sound/buzz event detected.','Sensor package collected.','AI cross-checking multiple signals…','GPS coordinates acquired: ±8 m','Emergency alert package prepared.'];
+for(let i=0;i<5;i++){nodes[i].classList.add('active');log(steps[i]);$('#led').style.background=i===4?'#ff5964':'white';await new Promise(r=>setTimeout(r,650))}
+$('#vm').textContent='VERIFIED';$('#am').textContent='SENT';$('#alert').classList.add('show');$('#status').textContent='Emergency alert simulated'}
+$('#sos').onclick=run;$('#simulate').onclick=run;
+let drag=false,x=0,y=0,rx=0,ry=0;$('#stage').onpointerdown=e=>{drag=true;x=e.clientX;y=e.clientY;$('#stage').setPointerCapture(e.pointerId)};$('#stage').onpointermove=e=>{if(!drag)return;ry+=(e.clientX-x)*.5;rx-=(e.clientY-y)*.4;x=e.clientX;y=e.clientY;$('#device').style.animation='none';$('#device').style.transform=`rotateX(${rx}deg) rotateY(${ry}deg)`};$('#stage').onpointerup=()=>drag=false;
+setInterval(()=>{if(!$('#alert').classList.contains('show'))sensors()},1800);
+</script>
+</body></html>
